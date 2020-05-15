@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AutoForm } from 'uniforms-patternfly';
+
+import schema from './schema/json-schema';
+
+import { AddressForm } from './Forms/Simple';
+// import { Fields as AddressForm } from './Forms/UniformsFields';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={containerStyle}>
+      <AddressForm />
+      {/* Full auto form commented out */}
+      {/* <AutoForm /> */}
     </div>
   );
+}
+
+const containerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  minHeight: '100vh',
+  width: '100vw',
+  padding: '10em 0'
 }
 
 export default App;

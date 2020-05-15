@@ -1,5 +1,5 @@
 import React from 'react';
-import { AutoForm, TextField, SubmitField, BoolField, AutoFields } from 'uniforms-patternfly';
+import { AutoForm, SubmitField, AutoFields } from 'uniforms-patternfly';
 import schema from '../schema/json-schema';
 
 export function Fields() {
