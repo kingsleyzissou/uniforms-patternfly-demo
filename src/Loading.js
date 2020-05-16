@@ -5,7 +5,7 @@ export function Loading() {
   return(
     <EmptyState>
       <Spinner />
-      <Title>Loading...</Title>
+      <Title size={'medium'}>Loading...</Title>
     </EmptyState>
   );
 }

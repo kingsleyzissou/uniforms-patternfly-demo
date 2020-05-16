@@ -10,7 +10,7 @@ export function Feedback({ type }) {
   return(
     <EmptyState>
       <EmptyStateIcon icon={state.icon} />
-      <Title>{state.title}</Title>
+      <Title size={'medium'}>{state.title}</Title>
       <EmptyStateBody>{state.message}</EmptyStateBody>
     </EmptyState>
   );
