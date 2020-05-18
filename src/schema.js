@@ -5,11 +5,27 @@ import { loader } from 'graphql.macro';
 // import the grapqhl model
 const model = loader('./model/runtime.graphql');
 
-// empty validator (i.e. no form validation)
-const validator = () => {};
+const validator = (model) => {
+  const details = [];
+
+  if (!model.title) {
+    details.push({ name: 'title' });
+  }
+
+  if (details.length) {
+    throw { details };
+  }
+};
+
+const data = {
+  title: {
+    required: true,
+    errorMessage: 'Title is required',
+  }
+}
 
 export const schema = new GraphQLBridge(
   buildASTSchema((model)).getType('Todo'),
   validator,
-  {}
+  data,
 );
